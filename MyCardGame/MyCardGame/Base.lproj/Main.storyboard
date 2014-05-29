@@ -172,7 +172,7 @@
                                     <action selector="selectCard:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6dl-D8-UEE"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Czt-IN-RIE" customClass="SetCardView">
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Czt-IN-RIE" customClass="SetCardView">
                                 <rect key="frame" x="20" y="20" width="62" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

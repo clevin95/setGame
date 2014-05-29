@@ -34,6 +34,15 @@
 
 @implementation MatchGameViewController
 
+- (void) setSetCardsView:(SetCardView *)setCardsView
+{
+    _setCardsView = setCardsView;
+    setCardsView.color = @"red";
+    setCardsView.fill = @"blank";
+    setCardsView.count = 2;
+    setCardsView.shape = @"squiggle";
+}
+
 - (setDeck *)setDeck
 {
     if (!_setDeck){

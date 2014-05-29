@@ -26,6 +26,11 @@
 		6F1B4AC119323C9F003098E6 /* setDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B4AC019323C9F003098E6 /* setDeck.m */; };
 		6F1B4AC41932D5AC003098E6 /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1B4AC31932D5AC003098E6 /* GameLogic.m */; };
 		6F53A7BA1934D8FA00918A02 /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F53A7B91934D8FA00918A02 /* SetCardView.m */; };
+		6F92FE501936F84B00B6884B /* solidgreensquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE4D1936F84B00B6884B /* solidgreensquiggle.png */; };
+		6F92FE511936F84B00B6884B /* solidpurplesquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE4E1936F84B00B6884B /* solidpurplesquiggle.png */; };
+		6F92FE521936F84B00B6884B /* solidredsquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE4F1936F84B00B6884B /* solidredsquiggle.png */; };
+		6F92FE551936FBD600B6884B /* blankgreensquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE531936FBD600B6884B /* blankgreensquiggle.png */; };
+		6F92FE561936FBD600B6884B /* blankredsquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE541936FBD600B6884B /* blankredsquiggle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,11 @@
 		6F1B4AC31932D5AC003098E6 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLogic.m; path = model/GameLogic.m; sourceTree = "<group>"; };
 		6F53A7B81934D8FA00918A02 /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
 		6F53A7B91934D8FA00918A02 /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
+		6F92FE4D1936F84B00B6884B /* solidgreensquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solidgreensquiggle.png; sourceTree = "<group>"; };
+		6F92FE4E1936F84B00B6884B /* solidpurplesquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solidpurplesquiggle.png; sourceTree = "<group>"; };
+		6F92FE4F1936F84B00B6884B /* solidredsquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solidredsquiggle.png; sourceTree = "<group>"; };
+		6F92FE531936FBD600B6884B /* blankgreensquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankgreensquiggle.png; sourceTree = "<group>"; };
+		6F92FE541936FBD600B6884B /* blankredsquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankredsquiggle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +137,8 @@
 		6F1B4A8119304B49003098E6 /* MyCardGame */ = {
 			isa = PBXGroup;
 			children = (
+				6F8239E6193654E400D75645 /* iPad */,
+				6F92FE471936F0EE00B6884B /* SetCardImages */,
 				6F1B4A8D19304B49003098E6 /* Main.storyboard */,
 				6F1B4A9019304B49003098E6 /* MatchGameViewController.h */,
 				6F1B4A9119304B49003098E6 /* MatchGameViewController.m */,
@@ -183,6 +195,34 @@
 				6F1B4AC31932D5AC003098E6 /* GameLogic.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6F8239E6193654E400D75645 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		6F92FE471936F0EE00B6884B /* SetCardImages */ = {
+			isa = PBXGroup;
+			children = (
+				6F92FE4C1936F84B00B6884B /* untitled folder 2 */,
+			);
+			name = SetCardImages;
+			sourceTree = "<group>";
+		};
+		6F92FE4C1936F84B00B6884B /* untitled folder 2 */ = {
+			isa = PBXGroup;
+			children = (
+				6F92FE4D1936F84B00B6884B /* solidgreensquiggle.png */,
+				6F92FE531936FBD600B6884B /* blankgreensquiggle.png */,
+				6F92FE541936FBD600B6884B /* blankredsquiggle.png */,
+				6F92FE4E1936F84B00B6884B /* solidpurplesquiggle.png */,
+				6F92FE4F1936F84B00B6884B /* solidredsquiggle.png */,
+			);
+			name = "untitled folder 2";
+			path = "../../../../untitled folder 2";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +303,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F1B4A9419304B49003098E6 /* Images.xcassets in Resources */,
+				6F92FE551936FBD600B6884B /* blankgreensquiggle.png in Resources */,
 				6F1B4A8619304B49003098E6 /* InfoPlist.strings in Resources */,
+				6F92FE561936FBD600B6884B /* blankredsquiggle.png in Resources */,
+				6F92FE521936F84B00B6884B /* solidredsquiggle.png in Resources */,
+				6F92FE511936F84B00B6884B /* solidpurplesquiggle.png in Resources */,
+				6F92FE501936F84B00B6884B /* solidgreensquiggle.png in Resources */,
 				6F1B4A8F19304B49003098E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +463,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyCardGame/MyCardGame-Prefix.pch";
 				INFOPLIST_FILE = "MyCardGame/MyCardGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -431,7 +478,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyCardGame/MyCardGame-Prefix.pch";
 				INFOPLIST_FILE = "MyCardGame/MyCardGame-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

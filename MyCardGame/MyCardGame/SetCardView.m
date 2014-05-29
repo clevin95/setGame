@@ -42,16 +42,46 @@
     }
     return self;
 }
-
+#define IMAGE_INSETS_HEIGHT 0.15
+#define IMAGE_INSETS_WIDTH 0.17
 #define CORNER_RADIUS 8
 - (void)drawRect:(CGRect)rect
 {
     UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:CORNER_RADIUS];
+    
     [roundedRect addClip];
-    [[UIColor redColor] setFill];
-    UIRectFill(self.bounds);
+    UIImage *background = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@%@.png",self.fill,self.color,self.shape]];
+    NSLog(@"%@",background);
+    
+    CGRect topBox = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height * 0.5);
+    
+    CGRect middleBox = CGRectMake(self.bounds.origin.x, self.bounds.origin.y + (self.bounds.size.height * 0.5)/2, self.bounds.size.width, self.bounds.size.height * 0.5);
+    
+    CGRect bottomBox = CGRectMake(self.bounds.origin.x, self.bounds.origin.y + (self.bounds.size.height * 0.5), self.bounds.size.width, self.bounds.size.height * 0.5);
+    
+    CGRect imageRectTop = CGRectInset(topBox,
+                                   self.bounds.size.width * IMAGE_INSETS_WIDTH,
+                                   self.bounds.size.height * IMAGE_INSETS_HEIGHT);
+    CGRect imageRectMiddle = CGRectInset(middleBox,
+                                   self.bounds.size.width * IMAGE_INSETS_WIDTH,
+                                   self.bounds.size.height * IMAGE_INSETS_HEIGHT);
+    CGRect imageRectBottom = CGRectInset(bottomBox,
+                                         self.bounds.size.width * IMAGE_INSETS_WIDTH,
+                                         self.bounds.size.height * IMAGE_INSETS_HEIGHT);
+    
+    if (self.count % 2 != 0){
+        [background drawInRect:imageRectMiddle];
+    } if (self.count != 1){
+        [background drawInRect:imageRectTop];
+        [background drawInRect:imageRectBottom];
+    }
     [[UIColor blackColor] setStroke];
     [roundedRect stroke];
+}
+
+- (void)drawShapes
+{
+    
 }
 
 @end
