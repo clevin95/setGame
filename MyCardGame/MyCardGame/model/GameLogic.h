@@ -21,5 +21,6 @@
                      Card3:(SetCard *)Card3;
 
 - (BOOL)rightSet: (NSArray *)selected;
+- (int) cardsInPlay;
 
 @end

@@ -87,4 +87,9 @@
     return YES;
 }
 
+- (int) cardsInPlay
+{
+    return 12;
+}
+
 @end

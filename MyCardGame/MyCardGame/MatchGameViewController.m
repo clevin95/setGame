@@ -19,29 +19,71 @@
 #import "SetCard.h"
 #import "GameLogic.h"
 #import "SetCardView.h"
+#import "SetCardCollectionViewCell.h"
 
-@interface MatchGameViewController ()
+@interface MatchGameViewController () <UICollectionViewDataSource>
 @property (nonatomic) setDeck *setDeck;
 @property (nonatomic) GameLogic *game;
 @property (strong, nonatomic) NSMutableDictionary *cardsAndButtons;
 @property (strong, nonatomic) NSMutableArray *selectedCards;
-
 //All Button/Label outlets bellow
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setCard;
 //Below is a test
-@property (weak, nonatomic) IBOutlet SetCardView *setCardsView;
+@property (weak, nonatomic) IBOutlet UICollectionView *SetCardCollectionView;
 @end
 
 @implementation MatchGameViewController
 
-- (void) setSetCardsView:(SetCardView *)setCardsView
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    _setCardsView = setCardsView;
-    setCardsView.color = @"red";
-    setCardsView.fill = @"blank";
-    setCardsView.count = 2;
-    setCardsView.shape = @"squiggle";
+    return [self.game cardsInPlay];
 }
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SetCard" forIndexPath:indexPath];
+    [self updateCell:cell];
+    return cell;
+}
+
+- (void)selectCardAtIndex:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *selectedCell=[self.SetCardCollectionView cellForItemAtIndexPath:indexPath];
+    if ([selectedCell isKindOfClass:[SetCardCollectionViewCell class]]){
+        SetCardCollectionViewCell *selectedCollectionViewCell = (SetCardCollectionViewCell *) selectedCell;
+        SetCardView *sender = selectedCollectionViewCell.setCardView;
+        SetCardView *setCardView = sender;
+        SetCard *newSelected = [[SetCard alloc]init];
+        newSelected.count = setCardView.count;
+        newSelected.color = setCardView.color;
+        newSelected.fill = setCardView.fill; 
+        newSelected.shape = setCardView.shape;
+        [self.selectedCards addObject:newSelected];
+        [self checkSet];
+    }
+
+}
+
+
+- (IBAction)cardSelected:(UITapGestureRecognizer *)gesture {
+    CGPoint possitionInView = [gesture locationInView:self.SetCardCollectionView];
+    NSIndexPath *indexPath = [self.SetCardCollectionView indexPathForItemAtPoint:possitionInView];
+    if (indexPath){
+        [self selectCardAtIndex:indexPath];
+    }
+}
+
+- (void)updateCell:(UICollectionViewCell *)cell
+{
+    if ([cell isKindOfClass:[SetCardCollectionViewCell class ]]){
+        SetCard *setCard = [self.setDeck selectRandomCard];
+        SetCardView *SetCardView = ((SetCardCollectionViewCell *)cell).setCardView;
+        SetCardView.count = setCard.count;
+        SetCardView.color = setCard.color;
+        SetCardView.fill = setCard.fill;
+        SetCardView.shape = setCard.shape;
+    }
+}
+                     
 
 - (setDeck *)setDeck
 {
@@ -78,15 +120,6 @@
 - (void) dealGame
 {
     [self.setDeck createDeck];
-    NSLog(@"%@",self.setDeck);
-    for (UIButton *cardButton in self.setCard){
-        SetCard *card = [self.setDeck selectRandomCard];
-        [self.cardsAndButtons setObject:card forKey:
-         [NSString stringWithFormat:@"%@",cardButton]];
-        cardButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        [cardButton.titleLabel setLineBreakMode:NSLineBreakByWordWrapping];
-        [cardButton setTitle:[NSString stringWithFormat:@"%@\n%@\n%d\n%@",card.color,card.shape,card.count,card.fill] forState:UIControlStateNormal];
-    }
 }
 
 - (BOOL)checkSet
@@ -105,14 +138,6 @@
         self.selectedCards = nil;
     }
     return NO;
-}
-
-- (IBAction)selectCard:(id)sender {
-    SetCard *selectedCard = self.cardsAndButtons[[NSString stringWithFormat:@"%@",sender]];
-    [self.selectedCards addObject:selectedCard];
-    if([self checkSet]){
-        NSLog(@"THIS IS A SET");
-    }
 }
 
 - (void)viewDidLoad

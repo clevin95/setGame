@@ -31,6 +31,7 @@
 		6F92FE521936F84B00B6884B /* solidredsquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE4F1936F84B00B6884B /* solidredsquiggle.png */; };
 		6F92FE551936FBD600B6884B /* blankgreensquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE531936FBD600B6884B /* blankgreensquiggle.png */; };
 		6F92FE561936FBD600B6884B /* blankredsquiggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F92FE541936FBD600B6884B /* blankredsquiggle.png */; };
+		6F92FE5C19380A1000B6884B /* SetCardCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F92FE5B19380A1000B6884B /* SetCardCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		6F92FE4F1936F84B00B6884B /* solidredsquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solidredsquiggle.png; sourceTree = "<group>"; };
 		6F92FE531936FBD600B6884B /* blankgreensquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankgreensquiggle.png; sourceTree = "<group>"; };
 		6F92FE541936FBD600B6884B /* blankredsquiggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankredsquiggle.png; sourceTree = "<group>"; };
+		6F92FE5A19380A1000B6884B /* SetCardCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardCollectionViewCell.h; sourceTree = "<group>"; };
+		6F92FE5B19380A1000B6884B /* SetCardCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				6F8239E6193654E400D75645 /* iPad */,
 				6F92FE471936F0EE00B6884B /* SetCardImages */,
 				6F1B4A8D19304B49003098E6 /* Main.storyboard */,
+				6F92FE5A19380A1000B6884B /* SetCardCollectionViewCell.h */,
+				6F92FE5B19380A1000B6884B /* SetCardCollectionViewCell.m */,
 				6F1B4A9019304B49003098E6 /* MatchGameViewController.h */,
 				6F1B4A9119304B49003098E6 /* MatchGameViewController.m */,
 				6F53A7B81934D8FA00918A02 /* SetCardView.h */,
@@ -329,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F1B4A8C19304B49003098E6 /* MatchGameAppDelegate.m in Sources */,
+				6F92FE5C19380A1000B6884B /* SetCardCollectionViewCell.m in Sources */,
 				6F53A7BA1934D8FA00918A02 /* SetCardView.m in Sources */,
 				6F1B4AC119323C9F003098E6 /* setDeck.m in Sources */,
 				6F1B4A9219304B49003098E6 /* MatchGameViewController.m in Sources */,
